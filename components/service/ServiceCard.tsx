@@ -8,12 +8,12 @@ import { useFormStore } from "@/lib/store";
 
 export function ServiceCard({ service, index }: { service: ServiceConfig; index: number }) {
   const t = useTranslations();
-  const state = useFormStore((s) => s.services[service.id] || {});
+  const state = useFormStore((s) => s.services[service.id]);
   const setService = useFormStore((s) => s.setService);
 
-  const interest = state.interest ?? null;
-  const priceMonthly = state.priceMonthly ?? null;
-  const priceSetup = state.priceSetup ?? null;
+  const interest = state?.interest ?? null;
+  const priceMonthly = state?.priceMonthly ?? null;
+  const priceSetup = state?.priceSetup ?? null;
 
   const setInterest = (v: "very" | "somewhat" | "none") => {
     if (v === "none") {
