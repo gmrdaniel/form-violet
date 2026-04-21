@@ -14,6 +14,44 @@ import { YesNo } from "@/components/fields/YesNo";
 import { BUDGET_RANGES } from "@/lib/schema";
 import { useFormStore } from "@/lib/store";
 
+const COUNTRY_CODES = [
+  { code: "+52", flag: "🇲🇽", label: "México" },
+  { code: "+1",  flag: "🇺🇸", label: "EE.UU." },
+  { code: "+1",  flag: "🇨🇦", label: "Canadá" },
+  { code: "+54", flag: "🇦🇷", label: "Argentina" },
+  { code: "+57", flag: "🇨🇴", label: "Colombia" },
+  { code: "+56", flag: "🇨🇱", label: "Chile" },
+  { code: "+51", flag: "🇵🇪", label: "Perú" },
+  { code: "+55", flag: "🇧🇷", label: "Brasil" },
+  { code: "+34", flag: "🇪🇸", label: "España" },
+  { code: "+598", flag: "🇺🇾", label: "Uruguay" },
+  { code: "+58", flag: "🇻🇪", label: "Venezuela" },
+  { code: "+593", flag: "🇪🇨", label: "Ecuador" },
+  { code: "+591", flag: "🇧🇴", label: "Bolivia" },
+  { code: "+595", flag: "🇵🇾", label: "Paraguay" },
+  { code: "+506", flag: "🇨🇷", label: "Costa Rica" },
+  { code: "+507", flag: "🇵🇦", label: "Panamá" },
+  { code: "+502", flag: "🇬🇹", label: "Guatemala" },
+  { code: "+503", flag: "🇸🇻", label: "El Salvador" },
+  { code: "+504", flag: "🇭🇳", label: "Honduras" },
+  { code: "+505", flag: "🇳🇮", label: "Nicaragua" },
+  { code: "+53", flag: "🇨🇺", label: "Cuba" },
+  { code: "+1",  flag: "🇩🇴", label: "Rep. Dominicana" },
+  { code: "+1",  flag: "🇵🇷", label: "Puerto Rico" },
+] as const;
+
+function splitPhone(full: string | undefined | null): { lada: string; numero: string } {
+  if (!full) return { lada: "+52", numero: "" };
+  const trimmed = full.trim();
+  const sorted = [...COUNTRY_CODES].sort((a, b) => b.code.length - a.code.length);
+  for (const { code } of sorted) {
+    if (trimmed.startsWith(code)) {
+      return { lada: code, numero: trimmed.slice(code.length).trim() };
+    }
+  }
+  return { lada: "+52", numero: trimmed };
+}
+
 export function S4Wizard({ qId }: { qId: 9 | 10 | 11 }) {
   const t = useTranslations();
   const locale = useLocale();
@@ -166,6 +204,15 @@ function Q11({ t, store, submitting, error, onSubmit }: any) {
     consent === false ||
     (consent === true && !!store.contact_phone && store.contact_phone.replace(/\D/g, "").length >= 8);
 
+  const initial = splitPhone(store.contact_phone);
+  const [lada, setLada] = useState(initial.lada);
+  const [numero, setNumero] = useState(initial.numero);
+
+  const updatePhone = (nextLada: string, nextNumero: string) => {
+    const digits = nextNumero.replace(/\D/g, "");
+    store.set("contact_phone", digits ? `${nextLada} ${digits}` : "");
+  };
+
   return (
     <>
       <h2 className="text-[20px] font-semibold leading-tight mb-4">{t("s4.q11.text")}</h2>
@@ -186,12 +233,40 @@ function Q11({ t, store, submitting, error, onSubmit }: any) {
             className="overflow-hidden mt-4 pt-4 border-t border-white/8"
           >
             <label className="text-[11px] text-white/55 block mb-1.5">{t("s4.q11.phoneLabel")}</label>
-            <TextInput
-              type="tel"
-              value={store.contact_phone || ""}
-              onChange={(v: string) => store.set("contact_phone", v)}
-              placeholder={t("s4.q11.phonePlaceholder")}
-            />
+            <div className="flex gap-2">
+              <select
+                value={`${lada}|${COUNTRY_CODES.find((c) => c.code === lada)?.label ?? ""}`}
+                onChange={(e) => {
+                  const nextLada = e.target.value.split("|")[0];
+                  setLada(nextLada);
+                  updatePhone(nextLada, numero);
+                }}
+                className="px-3 py-3.5 text-sm rounded-xl bg-raised border border-[rgba(255,255,255,0.12)] focus:border-white/40 focus:outline-none appearance-none pr-8"
+                style={{
+                  backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='white' stroke-opacity='0.5' stroke-width='1.5' fill='none'/></svg>\")",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right 10px center",
+                }}
+              >
+                {COUNTRY_CODES.map((c) => (
+                  <option key={`${c.flag}-${c.code}-${c.label}`} value={`${c.code}|${c.label}`}>
+                    {c.flag} {c.code} {c.label}
+                  </option>
+                ))}
+              </select>
+              <div className="flex-1">
+                <TextInput
+                  type="tel"
+                  value={numero}
+                  onChange={(v: string) => {
+                    const digits = v.replace(/\D/g, "");
+                    setNumero(digits);
+                    updatePhone(lada, digits);
+                  }}
+                  placeholder="55 1234 5678"
+                />
+              </div>
+            </div>
             <label className="text-[11px] text-white/55 block mt-3 mb-1.5">{t("s4.q11.emailLabel")}</label>
             <TextInput
               type="email"
