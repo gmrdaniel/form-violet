@@ -26,6 +26,13 @@ export async function POST(req: Request) {
 
   const parsed = SubmissionSchema.safeParse(body);
   if (!parsed.success) {
+    // Log to Vercel Function Logs so we can diagnose without the client body.
+    console.warn(
+      "[submit] validation failed. issues=",
+      JSON.stringify(parsed.error.issues),
+      " body keys=",
+      Object.keys(body ?? {}),
+    );
     return NextResponse.json(
       { ok: false, error: "validation", issues: parsed.error.issues },
       { status: 400 },

@@ -12,6 +12,7 @@ import { TextInput } from "@/components/fields/TextInput";
 import { TextArea } from "@/components/fields/TextArea";
 import { YesNo } from "@/components/fields/YesNo";
 import { BUDGET_RANGES } from "@/lib/schema";
+import { SERVICES } from "@/lib/services";
 import { useFormStore } from "@/lib/store";
 
 const COUNTRY_CODES = [
@@ -175,18 +176,30 @@ export function S4Wizard({ qId }: { qId: 9 | 10 | 11 }) {
     setSubmitting(true);
     setError(null);
     try {
+      // Normalize: SubmissionSchema requires exactly 13 services and uses
+      // .nullable() (not .optional()) for free-text/phone/email fields, so
+      // absent keys must be explicit null — undefined gets dropped by JSON.
+      const services = SERVICES.map((cfg) => {
+        const s = store.services[cfg.id];
+        return {
+          serviceId: cfg.id,
+          interest: s?.interest ?? "none",
+          priceMonthly: s?.priceMonthly ?? null,
+          priceSetup: s?.priceSetup ?? null,
+        };
+      });
+
       const res = await fetch("/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...store,
           locale,
-          services: Object.values(store.services).map((s) => ({
-            serviceId: s.serviceId,
-            interest: s.interest ?? "none",
-            priceMonthly: s.priceMonthly ?? null,
-            priceSetup: s.priceSetup ?? null,
-          })),
+          services,
+          platforms_other: store.platforms_other ?? null,
+          budget_custom: store.budget_custom ?? null,
+          contact_phone: store.contact_phone ?? null,
+          contact_email: store.contact_email ?? null,
           hp_website: "",
         }),
       });
