@@ -241,15 +241,20 @@ function Q11({ t, store, submitting, error, onSubmit }: any) {
                   setLada(nextLada);
                   updatePhone(nextLada, numero);
                 }}
-                className="px-3 py-3.5 text-sm rounded-xl bg-raised border border-[rgba(255,255,255,0.12)] focus:border-white/40 focus:outline-none appearance-none pr-8"
+                className="px-3 py-3.5 text-sm rounded-xl bg-raised border border-[rgba(255,255,255,0.12)] focus:border-white/40 focus:outline-none appearance-none pr-8 text-white"
                 style={{
+                  colorScheme: "dark",
                   backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='white' stroke-opacity='0.5' stroke-width='1.5' fill='none'/></svg>\")",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "right 10px center",
                 }}
               >
                 {COUNTRY_CODES.map((c) => (
-                  <option key={`${c.flag}-${c.code}-${c.label}`} value={`${c.code}|${c.label}`}>
+                  <option
+                    key={`${c.flag}-${c.code}-${c.label}`}
+                    value={`${c.code}|${c.label}`}
+                    style={{ backgroundColor: "#1A1A22", color: "white" }}
+                  >
                     {c.flag} {c.code} {c.label}
                   </option>
                 ))}
