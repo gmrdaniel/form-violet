@@ -113,7 +113,7 @@ const SERVICE_ORDER: readonly string[] = [
  * form-green already emits this shape via react-phone-number-input;
  * form-violet's schema lets users type freely, so we clean on the server.
  */
-function normalizePhone(raw: string | null | undefined): string | null {
+export function normalizePhone(raw: string | null | undefined): string | null {
   if (!raw) return null;
   const cleaned = raw.replace(/[\s()-]/g, "");
   if (!cleaned) return null;
@@ -160,7 +160,7 @@ const DIAL_TO_ISO: Record<string, string> = {
   "+598": "UY",
 };
 
-function derivePhoneCountry(e164: string | null): string | null {
+export function derivePhoneCountry(e164: string | null): string | null {
   if (!e164 || !e164.startsWith("+")) return null;
   // Longest prefix wins: +598 (Uruguay) must match before +5 (not a real code).
   for (let digits = 4; digits >= 1; digits--) {
@@ -188,7 +188,7 @@ type PriceChoice = "low" | "mid" | "high" | "other" | "not_interested";
  * apart from tapping the chip; we treat it as the chip. For willingness-to-pay
  * analytics that's the right answer.
  */
-function derivePriceChoice(
+export function derivePriceChoice(
   priceMonthly: number | null,
   prices: readonly [number, number, number] | undefined,
 ): { choice: PriceChoice | null; other: number | null } {
