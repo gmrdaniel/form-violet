@@ -1,0 +1,241 @@
+<h2>Piezas 2/3 — Sección 2: Matriz de 13 servicios</h2>
+<p class="subtitle">Esta es la pieza más crítica. Cada servicio tiene 2 preguntas (interés + precio). 13 servicios × 2 = mucho potencial de abandono. Dos variantes.</p>
+
+<style>
+  .phone-frame-2 {
+    width: 320px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 18px 16px;
+    background: rgba(255,255,255,0.02);
+    font-family: -apple-system, system-ui, sans-serif;
+  }
+  .progress-bar-2 { height:3px; background:rgba(255,255,255,0.08); border-radius:2px; overflow:hidden; margin-bottom:6px; }
+  .progress-fill-2 { height:100%; width:50%; background:white; }
+  .progress-meta-2 { display:flex; justify-content:space-between; font-size:11px; opacity:0.55; margin-bottom:20px; }
+  .sec-title { font-size:15px; font-weight:600; margin-bottom:4px; }
+  .sec-sub { font-size:12px; opacity:0.6; line-height:1.45; margin-bottom:16px; }
+  .svc-counter { font-size:11px; letter-spacing:0.08em; opacity:0.45; margin-bottom:10px; }
+
+  /* Service card */
+  .svc-card {
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    padding:14px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.02);
+  }
+  .svc-card.selected { border-color:rgba(255,255,255,0.25); background:rgba(255,255,255,0.04); }
+  .svc-card.dimmed { opacity:0.5; }
+  .svc-header { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+  .svc-num { font-size:10px; opacity:0.45; letter-spacing:0.1em; }
+  .svc-name { font-size:14px; font-weight:600; margin:2px 0 4px; }
+  .svc-desc { font-size:12px; opacity:0.65; line-height:1.4; }
+  .svc-status { font-size:11px; padding:3px 8px; border-radius:999px; background:rgba(255,255,255,0.08); white-space:nowrap; }
+
+  .interest-row { display:flex; gap:6px; margin-top:12px; }
+  .pick {
+    flex:1;
+    padding:10px 8px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.12);
+    font-size:11px;
+    text-align:center;
+    font-weight:500;
+  }
+  .pick.on { background:white; color:black; border-color:white; }
+  .pick.no { opacity:0.6; }
+
+  .price-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin-top:8px; }
+  .price { padding:10px 6px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); font-size:12px; text-align:center; font-weight:600; }
+  .price.on { background:white; color:black; border-color:white; }
+  .price-other { margin-top:6px; padding:8px 10px; border:1px dashed rgba(255,255,255,0.2); border-radius:10px; font-size:11px; opacity:0.7; text-align:center; }
+
+  .reveal-hint { font-size:10px; opacity:0.4; margin-top:10px; text-align:center; letter-spacing:0.08em; }
+
+  /* Variant A — all visible */
+  .variant-label { font-size:11px; letter-spacing:0.1em; opacity:0.6; text-align:center; margin:0 0 8px; }
+</style>
+
+<div class="split">
+  <!-- VARIANT A: ALL VISIBLE -->
+  <div class="mockup">
+    <div class="mockup-header">VARIANTE A — Todo visible siempre</div>
+    <div class="mockup-body">
+      <p class="variant-label">~13 tarjetas altas apiladas (~6500px scroll total)</p>
+      <div class="phone-frame-2">
+        <div class="progress-bar-2"><div class="progress-fill-2"></div></div>
+        <div class="progress-meta-2"><span>Sección 2 de 4</span><span>~2 min</span></div>
+        <div class="sec-title">Servicios que estamos considerando</div>
+        <div class="sec-sub">Para cada uno, decinos si te interesa y cuánto pagarías.</div>
+
+        <div class="svc-counter">SERVICIO 1 / 13</div>
+        <div class="svc-card selected">
+          <div class="svc-name">Short-form clips</div>
+          <div class="svc-desc">Convertimos tu contenido en clips listos para TikTok, Reels y Shorts. Con captions, formato y branding.</div>
+          <div style="font-size:11px;opacity:0.5;margin-top:10px;">Interés</div>
+          <div class="interest-row">
+            <div class="pick on">Me interesa</div>
+            <div class="pick">Tal vez</div>
+            <div class="pick">No</div>
+          </div>
+          <div style="font-size:11px;opacity:0.5;margin-top:12px;">Cuánto pagarías/mes</div>
+          <div class="price-row">
+            <div class="price">$29</div>
+            <div class="price on">$59</div>
+            <div class="price">$99</div>
+          </div>
+          <div class="price-other">Otro monto: $___</div>
+        </div>
+
+        <div class="svc-counter" style="margin-top:14px;">SERVICIO 2 / 13</div>
+        <div class="svc-card">
+          <div class="svc-name">Thumbnail + cover design</div>
+          <div class="svc-desc">Thumbnails profesionales con 2-3 variantes para testear...</div>
+          <div class="interest-row">
+            <div class="pick">Me interesa</div>
+            <div class="pick">Tal vez</div>
+            <div class="pick">No</div>
+          </div>
+          <div class="price-row">
+            <div class="price">$19</div>
+            <div class="price">$49</div>
+            <div class="price">$79</div>
+          </div>
+        </div>
+
+        <div style="text-align:center;opacity:0.4;font-size:11px;margin-top:14px;">↓ 11 más ↓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIANT B: PROGRESSIVE -->
+  <div class="mockup">
+    <div class="mockup-header">VARIANTE B — Progresiva (mi recomendación)</div>
+    <div class="mockup-body">
+      <p class="variant-label">Tarjetas compactas. El precio aparece solo si hay interés.</p>
+      <div class="phone-frame-2">
+        <div class="progress-bar-2"><div class="progress-fill-2"></div></div>
+        <div class="progress-meta-2"><span>Sección 2 de 4</span><span>~2 min</span></div>
+        <div class="sec-title">Servicios que estamos considerando</div>
+        <div class="sec-sub">13 servicios. Tocá el nivel de interés y aparece el precio.</div>
+
+        <!-- State: Very interested + price selected -->
+        <div class="svc-card selected">
+          <div class="svc-header">
+            <div>
+              <div class="svc-num">01 / 13</div>
+              <div class="svc-name">Short-form clips</div>
+              <div class="svc-desc">Clips listos para TikTok, Reels y Shorts. Captions y branding.</div>
+            </div>
+          </div>
+          <div class="interest-row">
+            <div class="pick on">🔥 Sí</div>
+            <div class="pick">Tal vez</div>
+            <div class="pick">No</div>
+          </div>
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:11px;opacity:0.5;margin-bottom:6px;">Cuánto pagarías/mes</div>
+            <div class="price-row">
+              <div class="price">$29</div>
+              <div class="price on">$59</div>
+              <div class="price">$99</div>
+            </div>
+            <div class="price-other">Otro monto</div>
+          </div>
+        </div>
+
+        <!-- State: Somewhat interested, price not yet picked -->
+        <div class="svc-card">
+          <div class="svc-header">
+            <div>
+              <div class="svc-num">02 / 13</div>
+              <div class="svc-name">Thumbnail + cover design</div>
+              <div class="svc-desc">Thumbnails con variantes para testear clics.</div>
+            </div>
+          </div>
+          <div class="interest-row">
+            <div class="pick">🔥 Sí</div>
+            <div class="pick on">Tal vez</div>
+            <div class="pick">No</div>
+          </div>
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);">
+            <div style="font-size:11px;opacity:0.5;margin-bottom:6px;">Cuánto pagarías/mes</div>
+            <div class="price-row">
+              <div class="price">$19</div>
+              <div class="price">$49</div>
+              <div class="price">$79</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- State: Not interested → collapsed -->
+        <div class="svc-card dimmed">
+          <div class="svc-header">
+            <div>
+              <div class="svc-num">03 / 13</div>
+              <div class="svc-name">AI dubbing / translation</div>
+            </div>
+            <div class="svc-status">No me interesa</div>
+          </div>
+        </div>
+
+        <!-- State: Initial / untouched -->
+        <div class="svc-card">
+          <div class="svc-header">
+            <div>
+              <div class="svc-num">04 / 13</div>
+              <div class="svc-name">Content SEO + hashtags</div>
+              <div class="svc-desc">Optimizamos keywords, tags, descripciones...</div>
+            </div>
+          </div>
+          <div class="interest-row">
+            <div class="pick">🔥 Sí</div>
+            <div class="pick">Tal vez</div>
+            <div class="pick">No</div>
+          </div>
+        </div>
+
+        <div style="text-align:center;opacity:0.4;font-size:11px;margin-top:10px;">↓ 9 más ↓</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:40px;">
+  <p class="label">Cómo se comporta la Variante B (progresiva)</p>
+  <ul style="line-height:1.7; font-size:14px; opacity:0.85;">
+    <li><strong>Estado inicial:</strong> tarjeta compacta con nombre + descripción + 3 botones de interés. Sin precio.</li>
+    <li><strong>Tocás "🔥 Sí" o "Tal vez":</strong> la tarjeta expande hacia abajo (spring 250ms) y revela las opciones de precio. El precio queda opcional — podés pasar al siguiente sin elegir.</li>
+    <li><strong>Tocás "No":</strong> la tarjeta colapsa, se atenúa, y muestra un badge "No me interesa". Podés cambiar de opinión tocando de nuevo.</li>
+    <li><strong>Contador "01 / 13":</strong> da sensación de progreso micro dentro de la sección.</li>
+    <li><strong>Scroll con snap:</strong> al entrar a la sección, la primera tarjeta queda centrada. Opcional — decime si lo querés.</li>
+    <li><strong>Botón flotante al final:</strong> "Continuar a bundles →" fijo abajo después de scrollear ~50%.</li>
+  </ul>
+</div>
+
+<div class="section" style="margin-top:24px;">
+  <p class="label">Trade-off</p>
+  <div class="pros-cons">
+    <div class="pros"><h4>Variante A (todo visible)</h4><ul><li>No hay interacción "oculta"</li><li>Puede completarse revisando una sola vez</li><li>Menos código</li></ul></div>
+    <div class="cons"><h4>Variante B (progresiva)</h4><ul><li>Sensación de "menos trabajo" (clave para no abandonar)</li><li>Scroll total ~40% menor</li><li>Los "No me interesa" desaparecen visualmente → atención a los que sí importan</li></ul></div>
+  </div>
+</div>
+
+<div class="options" style="margin-top:32px;">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Variante A — Todo visible</h3>
+      <p>Más directo, menos interacción sorpresa.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Variante B — Progresiva (recomendada)</h3>
+      <p>Más polish, percepción de menos trabajo, mejor para completion rate.</p>
+    </div>
+  </div>
+</div>

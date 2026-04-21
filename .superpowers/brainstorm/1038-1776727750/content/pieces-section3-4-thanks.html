@@ -1,0 +1,190 @@
+<h2>Piezas 3/3 — Bundles + Final + Thank You</h2>
+<p class="subtitle">Las últimas 3 pantallas. El bundle tiene el desafío único de mostrar una tabla comparativa visible mientras contesta.</p>
+
+<style>
+  .pf { width:320px; margin:0 auto; border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:18px 16px; background:rgba(255,255,255,0.02); font-family:-apple-system,system-ui,sans-serif; }
+  .pb { height:3px; background:rgba(255,255,255,0.08); border-radius:2px; overflow:hidden; margin-bottom:6px; }
+  .pf75 { height:100%; width:75%; background:white; }
+  .pf95 { height:100%; width:95%; background:white; }
+  .pmeta { display:flex; justify-content:space-between; font-size:11px; opacity:0.55; margin-bottom:18px; }
+  .t1 { font-size:15px; font-weight:600; margin-bottom:4px; }
+  .t2 { font-size:12px; opacity:0.6; line-height:1.45; margin-bottom:14px; }
+
+  /* Bundle comparison card */
+  .bundle-card {
+    border-radius:14px;
+    padding:14px;
+    margin-bottom:10px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .bundle-card.pro { border-color:rgba(180,140,255,0.3); background:linear-gradient(180deg, rgba(180,140,255,0.08), rgba(180,140,255,0.02)); }
+  .bundle-tag { display:inline-block; font-size:10px; letter-spacing:0.1em; padding:3px 8px; border-radius:999px; background:rgba(255,255,255,0.08); margin-bottom:6px; }
+  .bundle-name { font-size:15px; font-weight:700; margin-bottom:6px; }
+  .bundle-inc { font-size:11px; opacity:0.7; line-height:1.4; margin-bottom:8px; }
+  .bundle-save { display:flex; justify-content:space-between; align-items:center; font-size:11px; margin-top:8px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.08); }
+  .bundle-save .old { opacity:0.45; text-decoration:line-through; }
+  .bundle-save .new { color:#9fe899; font-weight:600; }
+
+  .q-label { font-size:13px; font-weight:500; margin:14px 0 8px; }
+  .price-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; }
+  .price-opt { padding:10px 4px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); font-size:12px; text-align:center; font-weight:600; }
+  .price-opt.on { background:white; color:black; border-color:white; }
+  .price-other-2 { margin-top:6px; padding:8px; border:1px dashed rgba(255,255,255,0.2); border-radius:10px; font-size:11px; text-align:center; opacity:0.6; }
+  .skip { font-size:11px; opacity:0.5; text-align:center; margin-top:6px; text-decoration:underline; }
+
+  /* Final section */
+  .q-num2 { font-size:11px; letter-spacing:0.08em; opacity:0.45; }
+  .q-big { font-size:18px; font-weight:500; line-height:1.3; margin:4px 0 14px; }
+  .textarea-mock { border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:12px; font-size:13px; opacity:0.55; min-height:80px; font-style:italic; }
+  .yesno { display:flex; gap:8px; margin-top:10px; }
+  .yn { flex:1; padding:14px; border:1px solid rgba(255,255,255,0.15); border-radius:12px; text-align:center; font-weight:600; }
+  .yn.on { background:white; color:black; border-color:white; }
+  .phone-input { margin-top:14px; padding:12px 14px; border:1px solid rgba(255,255,255,0.5); border-radius:10px; font-size:13px; background:rgba(255,255,255,0.04); }
+  .cta2 { display:block; width:100%; padding:14px; border-radius:999px; background:white; color:black; border:none; font-weight:600; font-size:14px; margin-top:14px; cursor:pointer; }
+
+  /* Thank you */
+  .ty-burst { width:64px; height:64px; border-radius:50%; background:radial-gradient(circle, rgba(255,220,100,0.3), transparent); margin:14px auto; display:flex; align-items:center; justify-content:center; font-size:32px; }
+  .ty-title { font-size:22px; font-weight:600; text-align:center; margin-bottom:10px; }
+  .ty-body { font-size:13px; text-align:center; opacity:0.75; line-height:1.5; margin-bottom:14px; }
+  .ty-gift { border:1px solid rgba(255,200,100,0.25); background:rgba(255,200,100,0.05); border-radius:12px; padding:12px; font-size:12px; line-height:1.5; margin-bottom:14px; }
+  .share-btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:13px; border-radius:999px; background:#25D366; color:white; font-weight:600; font-size:13px; margin-top:6px; }
+  .copy-btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:13px; border-radius:999px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); font-size:13px; margin-top:6px; }
+</style>
+
+<div class="split">
+  <!-- LEFT: Section 3 Bundles -->
+  <div class="mockup">
+    <div class="mockup-header">SECCIÓN 3 — BUNDLES</div>
+    <div class="mockup-body">
+      <div class="pf">
+        <div class="pb"><div class="pf75"></div></div>
+        <div class="pmeta"><span>Sección 3 de 4</span><span>~1 min</span></div>
+        <div class="t1">Bundles con descuento</div>
+        <div class="t2">En vez de comprar servicios uno por uno, mirá estos packs. Decinos cuánto pagarías por cada uno.</div>
+
+        <!-- Comparison as stacked cards, NOT a table (tables don't work on mobile) -->
+        <div class="bundle-card">
+          <div class="bundle-tag">STARTER</div>
+          <div class="bundle-name">Clips + thumbnails + reporte</div>
+          <div class="bundle-inc">Short-form clips, diseño de thumbnails/covers, reporte mensual de performance.</div>
+          <div class="bundle-save">
+            <span class="old">~$100-200/mo suelto</span>
+            <span class="new">Ahorrás 25-40%</span>
+          </div>
+          <div class="q-label">¿Cuánto pagarías/mes?</div>
+          <div class="price-grid">
+            <div class="price-opt">$79</div>
+            <div class="price-opt on">$99</div>
+            <div class="price-opt">$129</div>
+          </div>
+          <div class="price-other-2">Otro monto</div>
+          <div class="skip">No me interesa este bundle</div>
+        </div>
+
+        <div class="bundle-card">
+          <div class="bundle-tag">GROWTH</div>
+          <div class="bundle-name">Starter + dubbing + SEO + AI Coach</div>
+          <div class="bundle-inc">Todo lo del Starter más AI dubbing, SEO y ELEVN AI Coach.</div>
+          <div class="bundle-save">
+            <span class="old">~$250-450/mo suelto</span>
+            <span class="new">Ahorrás 30-45%</span>
+          </div>
+        </div>
+
+        <div class="bundle-card pro">
+          <div class="bundle-tag">PRO · más completo</div>
+          <div class="bundle-name">Todo + dashboard + media kit + posting</div>
+          <div class="bundle-inc">Growth + dashboard semanal + media kit + "posteamos por vos" + call mensual de 30 min.</div>
+          <div class="bundle-save">
+            <span class="old">~$400-700/mo suelto</span>
+            <span class="new">Ahorrás 35-50%</span>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.08);">
+          <div class="q-label" style="margin-top:0">¿Preferís comprar por bundle o individual?</div>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <div class="price-opt on" style="text-align:left; padding:10px 12px;">Bundle — más simple de manejar</div>
+            <div class="price-opt" style="text-align:left; padding:10px 12px;">Individual — solo lo que necesito</div>
+            <div class="price-opt" style="text-align:left; padding:10px 12px;">Depende del ahorro</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center;opacity:0.5;font-size:11px;margin-top:10px;">La tabla del doc se convierte en <strong>tarjetas apiladas</strong> (en móvil las tablas no se leen).</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: Section 4 Final + Thank You -->
+  <div class="mockup">
+    <div class="mockup-header">SECCIÓN 4 — FINAL (Q10 + Q11) / THANK YOU</div>
+    <div class="mockup-body">
+      <!-- Q10 open text -->
+      <div class="pf" style="margin-bottom:20px;">
+        <div class="pb"><div class="pf95"></div></div>
+        <div class="pmeta"><span>Sección 4 de 4</span><span>Última pregunta</span></div>
+        <div class="q-num2">PREGUNTA 10 / 11</div>
+        <div class="q-big">¿Con qué cosa te gustaría más que te ayudemos ahora mismo?</div>
+        <div class="textarea-mock">Contame lo que se te ocurra — 2 o 3 líneas alcanza...</div>
+        <div style="font-size:10px;opacity:0.4;margin-top:6px;text-align:right;">0 / 500</div>
+      </div>
+
+      <!-- Q11 contact with conditional -->
+      <div class="pf" style="margin-bottom:20px;">
+        <div class="q-num2">PREGUNTA 11 / 11</div>
+        <div class="q-big">¿Podemos contactarte para darte acceso anticipado cuando lancemos?</div>
+        <div class="yesno">
+          <div class="yn on">Sí 🎁</div>
+          <div class="yn">No</div>
+        </div>
+        <!-- Conditional reveal -->
+        <div style="margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.06); animation:slideDown .3s;">
+          <div style="font-size:11px;opacity:0.5;">Tu número (WhatsApp)</div>
+          <div class="phone-input">+52 55 1234 5678</div>
+          <div style="font-size:11px;opacity:0.5; margin-top:10px;">Email (opcional)</div>
+          <div class="phone-input" style="border-color:rgba(255,255,255,0.15)">tu@email.com</div>
+        </div>
+        <button class="cta2">Enviar respuestas ✓</button>
+      </div>
+
+      <!-- Thank you -->
+      <div class="pf">
+        <div class="ty-burst">🎉</div>
+        <div class="ty-title">¡Gracias!</div>
+        <div class="ty-body">Tus respuestas ya están guardadas. Cada una ayuda a construir mejores herramientas para creadores como vos.</div>
+        <div class="ty-gift">🎁 Ya estás en la lista de early access. Vas a ser de los primeros en probar gratis cuando lancemos.</div>
+        <div style="font-size:11px;opacity:0.6;text-align:center;margin:14px 0 8px;">¿Conocés otro creador que debería responder?</div>
+        <div class="share-btn">📲 Compartir por WhatsApp</div>
+        <div class="copy-btn">Copiar link</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:40px;">
+  <p class="label">Decisiones clave</p>
+  <ul style="line-height:1.7; font-size:14px; opacity:0.85;">
+    <li><strong>La tabla de bundles se convierte en tarjetas.</strong> En móvil, tablas de 4 columnas son ilegibles. Mismo contenido, mejor formato: precio original tachado + badge verde de ahorro.</li>
+    <li><strong>El bundle PRO tiene acento visual</strong> (morado tenue) — señala sutilmente que es el más completo sin gritar "compra este".</li>
+    <li><strong>Q11b/c revelación condicional</strong> — si tocás "Sí", los campos de teléfono y email aparecen con slide-down (mismo patrón que la Sección 2). Si tocás "No", el botón "Enviar" queda habilitado inmediatamente.</li>
+    <li><strong>Thank you con 2 CTAs de share</strong>: WhatsApp (verde nativo, 1 tap) + copiar link. Acá es donde ganás el 15-30% extra por viralidad.</li>
+    <li><strong>Contador de caracteres en Q10</strong> (0/500) — no es un límite estricto, es feedback visual de que están escribiendo algo valioso.</li>
+  </ul>
+</div>
+
+<div class="options" style="margin-top:32px;">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>Me gusta, seguí con el estilo visual</h3>
+      <p>Pasamos a definir la dirección visual: tipografía, color, personalidad.</p>
+    </div>
+  </div>
+  <div class="option" data-choice="iterate" onclick="toggleSelect(this)">
+    <div class="letter">↻</div>
+    <div class="content">
+      <h3>Cambios antes de seguir</h3>
+      <p>Decime qué ajustar.</p>
+    </div>
+  </div>
+</div>

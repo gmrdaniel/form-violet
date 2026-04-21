@@ -1,0 +1,143 @@
+<h2>Dirección visual</h2>
+<p class="subtitle">Tres direcciones distintas aplicadas a la welcome screen + una pregunta. Todas cumplen el polish tipo Emil Kowalski / impeccable.style, pero con personalidades muy distintas para creadores jóvenes.</p>
+
+<style>
+  .pf3 { width:300px; border-radius:22px; padding:20px 16px; font-family:-apple-system,system-ui,sans-serif; box-sizing:border-box; }
+
+  /* A — Editorial minimalist */
+  .a-frame { background:#FAFAF7; color:#1A1A1A; border:1px solid #E8E6DF; }
+  .a-logo { font-family:'Georgia', serif; font-size:13px; letter-spacing:0.1em; opacity:0.7; text-align:center; }
+  .a-title { font-family:'Georgia', serif; font-size:28px; font-weight:500; line-height:1.1; margin:16px 0 10px; letter-spacing:-0.01em; }
+  .a-body { font-size:13px; line-height:1.55; color:#555; margin-bottom:12px; }
+  .a-gift { border-left:2px solid #1B3A5C; padding:8px 12px; background:#F4F2EB; font-size:12px; line-height:1.45; margin-bottom:14px; }
+  .a-cta { display:block; width:100%; padding:13px; border-radius:8px; background:#1B3A5C; color:white; border:none; font-weight:500; font-size:13px; letter-spacing:0.02em; }
+  .a-social { font-size:10px; opacity:0.5; text-align:center; margin-top:14px; letter-spacing:0.05em; }
+  .a-pill { padding:11px 14px; border:1px solid #D8D5CC; border-radius:8px; font-size:13px; margin-bottom:6px; background:white; color:#1A1A1A; }
+  .a-pill.on { border-color:#1B3A5C; background:#1B3A5C; color:white; }
+
+  /* B — Dark creator aesthetic */
+  .b-frame { background:#0A0A0F; color:white; border:1px solid rgba(255,255,255,0.08); }
+  .b-logo { font-size:11px; letter-spacing:0.2em; opacity:0.5; text-align:center; font-weight:600; }
+  .b-title { font-size:30px; font-weight:700; line-height:1.05; margin:16px 0 10px; letter-spacing:-0.02em; background:linear-gradient(135deg, #fff 0%, #fff 50%, #A78BFA 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .b-body { font-size:13px; line-height:1.55; opacity:0.7; margin-bottom:12px; }
+  .b-gift { background:linear-gradient(135deg, rgba(167,139,250,0.15), rgba(236,72,153,0.1)); border:1px solid rgba(167,139,250,0.3); border-radius:12px; padding:10px 12px; font-size:12px; line-height:1.45; margin-bottom:14px; }
+  .b-cta { display:block; width:100%; padding:14px; border-radius:12px; background:linear-gradient(135deg, #A78BFA, #EC4899); color:white; border:none; font-weight:600; font-size:14px; }
+  .b-social { font-size:10px; opacity:0.45; text-align:center; margin-top:14px; }
+  .b-pill { padding:11px 14px; border:1px solid rgba(255,255,255,0.1); border-radius:12px; font-size:13px; margin-bottom:6px; background:rgba(255,255,255,0.02); }
+  .b-pill.on { background:linear-gradient(135deg, #A78BFA, #EC4899); border-color:transparent; }
+
+  /* C — Playful brutalist warm */
+  .c-frame { background:#FFF3E0; color:#1A1612; border:2px solid #1A1612; }
+  .c-logo { font-family:'Courier New', monospace; font-size:11px; letter-spacing:0.1em; text-align:center; opacity:0.7; }
+  .c-title { font-size:32px; font-weight:800; line-height:1; margin:14px 0 10px; letter-spacing:-0.02em; }
+  .c-accent { background:#FF5C00; color:white; padding:0 4px; font-style:italic; }
+  .c-body { font-size:13px; line-height:1.5; color:#333; margin-bottom:12px; font-family:'Courier New', monospace; }
+  .c-gift { background:#FFE066; border:2px solid #1A1612; border-radius:0; padding:10px 12px; font-size:12px; line-height:1.45; margin-bottom:14px; box-shadow:4px 4px 0 #1A1612; font-weight:500; }
+  .c-cta { display:block; width:100%; padding:14px; border-radius:0; background:#1A1612; color:#FFE066; border:2px solid #1A1612; font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.05em; box-shadow:4px 4px 0 #FF5C00; }
+  .c-social { font-family:'Courier New', monospace; font-size:10px; opacity:0.6; text-align:center; margin-top:14px; }
+  .c-pill { padding:11px 14px; border:2px solid #1A1612; border-radius:0; font-size:13px; margin-bottom:6px; background:white; font-weight:500; }
+  .c-pill.on { background:#FF5C00; color:white; }
+</style>
+
+<div class="split" style="gap:16px;">
+  <!-- A — EDITORIAL -->
+  <div class="mockup">
+    <div class="mockup-header">A — EDITORIAL MINIMAL</div>
+    <div class="mockup-body">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+        <div class="pf3 a-frame">
+          <div class="a-logo">LA NETA</div>
+          <div class="a-title">Queremos escucharte.</div>
+          <div class="a-body">La Neta apoya a más de 50,000 creadores. Estamos diseñando nuevos servicios y queremos hacerlo bien.</div>
+          <div class="a-gift">🎁 Completá la encuesta y sos de los primeros en probar gratis al lanzamiento.</div>
+          <button class="a-cta">Empecemos</button>
+          <div class="a-social">47 creadores ya participaron · 3 min</div>
+        </div>
+        <div class="pf3 a-frame">
+          <div style="font-size:10px;letter-spacing:0.1em;opacity:0.5;">PREGUNTA 4 / 11</div>
+          <div style="font-family:Georgia,serif; font-size:20px; margin:6px 0 16px; line-height:1.2;">¿Cuántos seguidores tenés?</div>
+          <div class="a-pill">Menos de 1,000</div>
+          <div class="a-pill">1,000 – 10,000</div>
+          <div class="a-pill on">10,000 – 50,000</div>
+          <div class="a-pill">50,000 – 100,000</div>
+        </div>
+      </div>
+      <div style="margin-top:14px; padding:10px; background:rgba(255,255,255,0.03); border-radius:8px; font-size:12px; opacity:0.75;">
+        <strong>Personalidad:</strong> calma, confiable, editorial. Serif Georgia para titulares, sans para body. Paleta crema + navy (color de La Neta). Se siente como una revista — poco ruido, mucho respeto. <strong>Para quién:</strong> creadores de 25-35, nicho educativo/lifestyle.
+      </div>
+    </div>
+  </div>
+
+  <!-- B — DARK CREATOR -->
+  <div class="mockup">
+    <div class="mockup-header">B — DARK CREATOR (recomendada)</div>
+    <div class="mockup-body">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+        <div class="pf3 b-frame">
+          <div class="b-logo">LA NETA</div>
+          <div class="b-title">Queremos escucharte</div>
+          <div class="b-body">La Neta apoya a 50,000+ creadores. Estamos diseñando nuevos servicios y queremos hacerlo bien.</div>
+          <div class="b-gift">🎁 Completá la encuesta y sos de los primeros en probar gratis al lanzamiento.</div>
+          <button class="b-cta">Empecemos →</button>
+          <div class="b-social">47 creadores ya participaron · 3 min</div>
+        </div>
+        <div class="pf3 b-frame">
+          <div style="font-size:10px;letter-spacing:0.1em;opacity:0.5;">PREGUNTA 4 / 11</div>
+          <div style="font-size:21px; font-weight:600; margin:6px 0 16px; line-height:1.2;">¿Cuántos seguidores tenés?</div>
+          <div class="b-pill">Menos de 1,000</div>
+          <div class="b-pill">1,000 – 10,000</div>
+          <div class="b-pill on">10,000 – 50,000</div>
+          <div class="b-pill">50,000 – 100,000</div>
+        </div>
+      </div>
+      <div style="margin-top:14px; padding:10px; background:rgba(255,255,255,0.03); border-radius:8px; font-size:12px; opacity:0.85;">
+        <strong>Personalidad:</strong> moderno, aspiracional, código-de-creador. Dark mode nativo (como TikTok, Spotify, Discord). Gradient sutil violeta→rosa en CTAs y títulos — 2025 vibe, no cringe. Inter o similar, bold. <strong>Para quién:</strong> creadores 18-30, audiencia Gen Z/millennial joven, video-first.
+      </div>
+    </div>
+  </div>
+
+  <!-- C — PLAYFUL BRUTAL -->
+  <div class="mockup">
+    <div class="mockup-header">C — BRUTALISTA CÁLIDO</div>
+    <div class="mockup-body">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+        <div class="pf3 c-frame">
+          <div class="c-logo">// LA NETA</div>
+          <div class="c-title">Queremos <span class="c-accent">escucharte.</span></div>
+          <div class="c-body">50K+ creadores confían en nosotros. Diseñamos nuevos servicios y queremos hacerlo bien.</div>
+          <div class="c-gift">🎁 Completá y sos de los primeros en probar gratis al lanzar.</div>
+          <button class="c-cta">→ Empecemos</button>
+          <div class="c-social">// 47 creadores ya · 3 min</div>
+        </div>
+        <div class="pf3 c-frame">
+          <div style="font-family:'Courier New',monospace; font-size:10px; letter-spacing:0.1em; opacity:0.6;">PREGUNTA 04 / 11</div>
+          <div style="font-size:22px; font-weight:800; margin:6px 0 16px; line-height:1.1;">¿Cuántos seguidores tenés?</div>
+          <div class="c-pill">Menos de 1,000</div>
+          <div class="c-pill">1,000 – 10,000</div>
+          <div class="c-pill on">10,000 – 50,000</div>
+          <div class="c-pill">50,000 – 100,000</div>
+        </div>
+      </div>
+      <div style="margin-top:14px; padding:10px; background:rgba(255,255,255,0.03); border-radius:8px; font-size:12px; opacity:0.85;">
+        <strong>Personalidad:</strong> con carácter, distinguible, zero corporativo. Neo-brutalism suave (sombras duras, borders gruesos, monoespaciado, amarillo+naranja). Feels indie. <strong>Riesgo:</strong> muy estilizado, puede polarizar. <strong>Para quién:</strong> creadores que valoran estética distintiva, mundo indie/artsy/gaming.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:40px;">
+  <p class="label">Mi recomendación</p>
+  <p style="line-height:1.6;"><strong>B — Dark Creator.</strong> Tres razones:</p>
+  <ol style="line-height:1.7; font-size:14px; opacity:0.9;">
+    <li><strong>Tu audiencia vive en dark mode.</strong> TikTok, Instagram, Discord, Spotify, YouTube — todas apps que usan creadores jóvenes tienen dark mode como default o preferencia dominante.</li>
+    <li><strong>WhatsApp-first favorece dark.</strong> Cuando el link abre desde WhatsApp (90% de tus respuestas), la mayoría ya tiene WhatsApp en dark. La transición entre app y formulario se siente continua.</li>
+    <li><strong>El gradient violeta→rosa</strong> es un gesto mínimo que distingue sin gritar. Usado en CTAs y selecciones, no en fondos. Muy alineado con lo que hace Emil Kowalski: detalles invisibles que suman personalidad.</li>
+  </ol>
+  <p style="line-height:1.6; margin-top:10px;"><strong>A</strong> si tu audiencia se inclina a educativo/serio. <strong>C</strong> si querés polarizar y destacar mucho (alto riesgo, alto retorno).</p>
+</div>
+
+<div class="options" style="margin-top:32px;">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)"><div class="letter">A</div><div class="content"><h3>Editorial Minimal</h3><p>Crema + navy, serif, calma.</p></div></div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)"><div class="letter">B</div><div class="content"><h3>Dark Creator ★</h3><p>Dark mode + gradient violeta/rosa.</p></div></div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)"><div class="letter">C</div><div class="content"><h3>Brutalista cálido</h3><p>Sombras duras, amarillo+naranja.</p></div></div>
+</div>
