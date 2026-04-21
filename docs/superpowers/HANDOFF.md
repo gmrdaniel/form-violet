@@ -39,10 +39,10 @@ Comando para verificar: `git log --oneline`
 
 Durante bootstrap, el implementer subió a v16 por un CVE (CVE-2025-66478). Compatibilidad App Router idéntica. Nota:
 - `middleware.ts` genera warning: "middleware is deprecated, use proxy". Funcionar funciona, pero en v17 hay que renombrar a `proxy.ts`.
-- Next 16 requiere **root layout + root page** aunque i18n esté bajo `[locale]`. Resuelto con:
-  - `app/layout.tsx` → passthrough que solo retorna `children`
-  - `app/page.tsx` → redirect a `/es`
-  - `app/[locale]/layout.tsx` → contiene `<html>`, `<body>`, fonts, `NextIntlClientProvider`
+- Next 16 requiere **root layout + root page**, y el root layout debe tener `<html>`/`<body>` (passthrough dispara `missing-root-layout-tags` en runtime). Estructura:
+  - `app/layout.tsx` → `<html lang={await getLocale()}>` + `<body>` + font. Server component, usa `getLocale()` de `next-intl/server` para lang per-locale.
+  - `app/page.tsx` → redirect a `/${routing.defaultLocale}`
+  - `app/[locale]/layout.tsx` → SIN `<html>`/`<body>` (evita duplicados). Solo `NextIntlClientProvider` + metadata + validación de locale.
 
 ### 2. Tailwind v4 (plan dice v3)
 
