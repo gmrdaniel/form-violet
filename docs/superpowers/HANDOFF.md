@@ -1,7 +1,7 @@
 # Handoff — Creator Survey Form
 
 **Última actualización:** 2026-04-20
-**Estado:** Fases 1-3 completadas · 11/30 tasks · tests 15/15 ✓ · build ✓
+**Estado:** Fases 1-4 completadas · 18/30 tasks · tests 15/15 ✓ · build ✓ · walkthrough visual end-to-end listo
 
 ## Cómo retomar en una sesión nueva
 
@@ -11,7 +11,7 @@
    > Retomando el proyecto. Estado en `docs/superpowers/HANDOFF.md`.
    > Plan en `docs/superpowers/plans/2026-04-20-creator-survey-form.md`.
    > Spec en `docs/superpowers/specs/2026-04-20-creator-survey-design.md`.
-   > Seguí con Tasks 12-18 (Fase 4 — screens).
+   > Seguí con Tasks 19-22 (Fase 5 — server + submit).
 
 3. Leer este archivo + los deltas al plan abajo antes de tocar código.
 
@@ -22,6 +22,7 @@
 | 1 | 1-6 | Next.js + Tailwind v4 + i18n + schema + configs + messages ES/EN |
 | 2 | 7-8 | Zustand store + draft localStorage con tests |
 | 3 | 9-11 | UI primitives (9 componentes) |
+| 4 | 12-18 | Welcome + S1 wizard + S2 list + S3 bundles + S4 wizard + Thanks |
 
 **Commits en git** (master branch):
 - `637f424` chore: bootstrap Next.js project with dependencies
@@ -108,20 +109,6 @@ C:\crm\formulario\
 
 ## Qué viene
 
-### Fase 4 (Tasks 12-18): Screens
-
-Orden sugerido y dependencias:
-
-1. **Task 12** — `components/screens/Welcome.tsx` + `components/chrome/ResumeBanner.tsx`, y actualizar `app/[locale]/page.tsx` para usar `Welcome`
-2. **Task 13** — `components/screens/S1Wizard.tsx` + `app/[locale]/s1/[qId]/page.tsx`
-3. **Task 14** — `components/service/ServiceCard.tsx` (con fix de re-expansión ya incluido en el plan)
-4. **Task 15** — `components/screens/S2List.tsx` + `app/[locale]/s2/page.tsx`
-5. **Task 16** — `components/bundle/BundleCard.tsx` + `components/screens/S3Bundles.tsx` + `app/[locale]/s3/page.tsx`
-6. **Task 17** — `components/screens/S4Wizard.tsx` + `app/[locale]/s4/[qId]/page.tsx`
-7. **Task 18** — `components/screens/Thanks.tsx` + `app/[locale]/thanks/page.tsx`
-
-Checkpoint sugerido al final de Fase 4: `npm run dev`, walkthrough completo welcome→thanks para verificar.
-
 ### Fase 5 (Tasks 19-22): Server
 
 Implementa `lib/sheets.ts`, `lib/rate-limit.ts` (con tests), `lib/email.ts`, y `app/api/submit/route.ts`.
@@ -144,11 +131,19 @@ Playwright E2E, .env.example, setup.md.
 
 5. **Tailwind v4 `@utility`** — si necesitás más utilities custom después del lanzamiento, van en `app/globals.css`. No crear `tailwind.config.ts`.
 
-6. **Preguntas abiertas del spec** (resolver antes de deploy):
+6. **Hardcoded "PREGUNTA N / 11" en S1Wizard y S4Wizard** — el plan hardcodea el label del contador de preguntas en español. No i18n. Para EN v1.1 agregar key `progress.questionCount` y leerla con `t(...)`. Baja prioridad.
+
+7. **Preguntas abiertas del spec** (resolver antes de deploy):
    - `hola@laneta.com` y `privacy@laneta.com` → confirmar con equipo La Neta
    - Logo SVG oficial → reemplazar `app/icon.svg` cuando llegue
    - PostHog región US vs EU
 
 ## Preguntas a respondedor para continuar
 
-Ninguna — el spec y plan cubren todo. Avanzar directo con Task 12.
+Ninguna — el spec y plan cubren todo. Avanzar directo con Task 19 (Fase 5 — server + submit).
+
+**Pre-requisitos para Fase 5:**
+- Credenciales de Google Service Account con acceso al Sheet destino (JSON).
+- Resend API key y email de `from` verificado.
+- `.env.local` con todas las variables (que se listan en Task 29 / `.env.example`).
+- Sin estos secretos no se puede probar el flujo de submit end-to-end.
