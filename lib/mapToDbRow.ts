@@ -104,6 +104,75 @@ const SERVICE_ORDER: readonly string[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
+/* phone normalization + country derivation                                    */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Strip whitespace / dashes so the stored number is strict E.164
+ * (e.g. "+52 55 1234 5678" → "+5255 12345678" → "+525512345678").
+ * form-green already emits this shape via react-phone-number-input;
+ * form-violet's schema lets users type freely, so we clean on the server.
+ */
+function normalizePhone(raw: string | null | undefined): string | null {
+  if (!raw) return null;
+  const cleaned = raw.replace(/[\s()-]/g, "");
+  if (!cleaned) return null;
+  return cleaned.startsWith("+") ? cleaned : `+${cleaned}`;
+}
+
+/**
+ * Dial-code → ISO-3166-1 alpha-2 country code. Covers the 6 priority
+ * countries, all of LATAM, and a handful of EU destinations where we
+ * might realistically get traffic. Anything outside returns null, which
+ * is the same as before this change — no regression for unknowns.
+ * +1 maps to 'US' even though Canada shares it; the survey audience is
+ * US-dominant, so misclassifying the occasional Canadian is acceptable.
+ */
+const DIAL_TO_ISO: Record<string, string> = {
+  "+1": "US",
+  "+33": "FR",
+  "+34": "ES",
+  "+39": "IT",
+  "+44": "GB",
+  "+49": "DE",
+  "+51": "PE",
+  "+52": "MX",
+  "+53": "CU",
+  "+54": "AR",
+  "+55": "BR",
+  "+56": "CL",
+  "+57": "CO",
+  "+58": "VE",
+  "+351": "PT",
+  "+501": "BZ",
+  "+502": "GT",
+  "+503": "SV",
+  "+504": "HN",
+  "+505": "NI",
+  "+506": "CR",
+  "+507": "PA",
+  "+509": "HT",
+  "+591": "BO",
+  "+592": "GY",
+  "+593": "EC",
+  "+595": "PY",
+  "+597": "SR",
+  "+598": "UY",
+};
+
+function derivePhoneCountry(e164: string | null): string | null {
+  if (!e164 || !e164.startsWith("+")) return null;
+  // Longest prefix wins: +598 (Uruguay) must match before +5 (not a real code).
+  for (let digits = 4; digits >= 1; digits--) {
+    const prefix = e164.slice(0, digits + 1);
+    if (prefix.length < 2) continue;
+    const iso = DIAL_TO_ISO[prefix];
+    if (iso) return iso;
+  }
+  return null;
+}
+
+/* -------------------------------------------------------------------------- */
 /* price-choice inference                                                      */
 /* -------------------------------------------------------------------------- */
 
@@ -188,9 +257,12 @@ export function toResponsesRow(
     q9_monthly_budget_other: sub.budget_custom ?? null,
     q10_top_wish: sub.one_wish,
     q11_can_contact: sub.contact_consent ? "yes" : "no",
-    q11b_phone: sub.contact_phone || null,
-    // form-violet's schema doesn't track country separately yet; leave null.
-    q11b_phone_country: null,
+    // Normalize to strict E.164 and derive ISO country from the dial prefix
+    // so form-violet's data is comparable with form-green's on the dashboard.
+    ...(() => {
+      const phone = normalizePhone(sub.contact_phone);
+      return { q11b_phone: phone, q11b_phone_country: derivePhoneCountry(phone) };
+    })(),
     q11c_email: sub.contact_email || null,
     consent_marketing: sub.contact_consent,
   };
