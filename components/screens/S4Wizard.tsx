@@ -2,7 +2,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/chrome/Container";
 import { ProgressBar } from "@/components/chrome/ProgressBar";
 import { LangSelector } from "@/components/chrome/LangSelector";
@@ -15,29 +15,26 @@ import { BUDGET_RANGES } from "@/lib/schema";
 import { useFormStore } from "@/lib/store";
 
 const COUNTRY_CODES = [
-  { code: "+52", flag: "🇲🇽", label: "México" },
-  { code: "+1",  flag: "🇺🇸", label: "EE.UU." },
-  { code: "+1",  flag: "🇨🇦", label: "Canadá" },
-  { code: "+54", flag: "🇦🇷", label: "Argentina" },
-  { code: "+57", flag: "🇨🇴", label: "Colombia" },
-  { code: "+56", flag: "🇨🇱", label: "Chile" },
-  { code: "+51", flag: "🇵🇪", label: "Perú" },
-  { code: "+55", flag: "🇧🇷", label: "Brasil" },
-  { code: "+34", flag: "🇪🇸", label: "España" },
-  { code: "+598", flag: "🇺🇾", label: "Uruguay" },
-  { code: "+58", flag: "🇻🇪", label: "Venezuela" },
-  { code: "+593", flag: "🇪🇨", label: "Ecuador" },
-  { code: "+591", flag: "🇧🇴", label: "Bolivia" },
-  { code: "+595", flag: "🇵🇾", label: "Paraguay" },
-  { code: "+506", flag: "🇨🇷", label: "Costa Rica" },
-  { code: "+507", flag: "🇵🇦", label: "Panamá" },
-  { code: "+502", flag: "🇬🇹", label: "Guatemala" },
-  { code: "+503", flag: "🇸🇻", label: "El Salvador" },
-  { code: "+504", flag: "🇭🇳", label: "Honduras" },
-  { code: "+505", flag: "🇳🇮", label: "Nicaragua" },
-  { code: "+53", flag: "🇨🇺", label: "Cuba" },
-  { code: "+1",  flag: "🇩🇴", label: "Rep. Dominicana" },
-  { code: "+1",  flag: "🇵🇷", label: "Puerto Rico" },
+  { code: "+52",  flag: "🇲🇽" },
+  { code: "+1",   flag: "🇺🇸" },
+  { code: "+54",  flag: "🇦🇷" },
+  { code: "+57",  flag: "🇨🇴" },
+  { code: "+56",  flag: "🇨🇱" },
+  { code: "+51",  flag: "🇵🇪" },
+  { code: "+55",  flag: "🇧🇷" },
+  { code: "+34",  flag: "🇪🇸" },
+  { code: "+598", flag: "🇺🇾" },
+  { code: "+58",  flag: "🇻🇪" },
+  { code: "+593", flag: "🇪🇨" },
+  { code: "+591", flag: "🇧🇴" },
+  { code: "+595", flag: "🇵🇾" },
+  { code: "+506", flag: "🇨🇷" },
+  { code: "+507", flag: "🇵🇦" },
+  { code: "+502", flag: "🇬🇹" },
+  { code: "+503", flag: "🇸🇻" },
+  { code: "+504", flag: "🇭🇳" },
+  { code: "+505", flag: "🇳🇮" },
+  { code: "+53",  flag: "🇨🇺" },
 ] as const;
 
 function splitPhone(full: string | undefined | null): { lada: string; numero: string } {
@@ -50,6 +47,108 @@ function splitPhone(full: string | undefined | null): { lada: string; numero: st
     }
   }
   return { lada: "+52", numero: trimmed };
+}
+
+function CountryCodeCombobox({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (code: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const rootRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: MouseEvent) => {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
+        setOpen(false);
+        setQuery("");
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setOpen(false); setQuery(""); }
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    setTimeout(() => inputRef.current?.focus(), 0);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  const digits = query.replace(/\D/g, "");
+  const filtered = digits
+    ? COUNTRY_CODES.filter((c) => c.code.replace("+", "").includes(digits))
+    : COUNTRY_CODES;
+
+  const current = COUNTRY_CODES.find((c) => c.code === value) ?? COUNTRY_CODES[0];
+
+  return (
+    <div ref={rootRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="px-3 py-3.5 text-sm rounded-xl bg-raised border border-[rgba(255,255,255,0.12)] focus:border-white/40 focus:outline-none pr-8 flex items-center gap-2 whitespace-nowrap"
+        style={{
+          backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='white' stroke-opacity='0.5' stroke-width='1.5' fill='none'/></svg>\")",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "right 10px center",
+        }}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+      >
+        <span className="text-base leading-none">{current.flag}</span>
+        <span>{current.code}</span>
+      </button>
+
+      {open && (
+        <div className="absolute left-0 top-full z-20 mt-1 w-[180px] rounded-xl bg-[#1A1A22] border border-[rgba(255,255,255,0.15)] shadow-lg overflow-hidden">
+          <input
+            ref={inputRef}
+            type="text"
+            inputMode="numeric"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Buscar: 52, 1..."
+            className="w-full px-3 py-2.5 text-sm bg-[rgba(255,255,255,0.04)] border-b border-[rgba(255,255,255,0.08)] text-white placeholder:text-white/35 focus:outline-none"
+          />
+          <ul className="max-h-56 overflow-y-auto" role="listbox">
+            {filtered.length === 0 && (
+              <li className="px-3 py-2.5 text-sm text-white/40">—</li>
+            )}
+            {filtered.map((c) => {
+              const isSelected = c.code === value;
+              return (
+                <li key={c.flag}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onChange(c.code);
+                      setOpen(false);
+                      setQuery("");
+                    }}
+                    className={`w-full text-left px-3 py-2 text-sm flex items-center gap-2 ${
+                      isSelected ? "bg-white/10" : "hover:bg-white/5"
+                    }`}
+                    role="option"
+                    aria-selected={isSelected}
+                  >
+                    <span className="text-base leading-none">{c.flag}</span>
+                    <span>{c.code}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function S4Wizard({ qId }: { qId: 9 | 10 | 11 }) {
@@ -234,31 +333,13 @@ function Q11({ t, store, submitting, error, onSubmit }: any) {
           >
             <label className="text-[11px] text-white/55 block mb-1.5">{t("s4.q11.phoneLabel")}</label>
             <div className="flex gap-2">
-              <select
-                value={`${lada}|${COUNTRY_CODES.find((c) => c.code === lada)?.label ?? ""}`}
-                onChange={(e) => {
-                  const nextLada = e.target.value.split("|")[0];
+              <CountryCodeCombobox
+                value={lada}
+                onChange={(nextLada) => {
                   setLada(nextLada);
                   updatePhone(nextLada, numero);
                 }}
-                className="px-3 py-3.5 text-sm rounded-xl bg-raised border border-[rgba(255,255,255,0.12)] focus:border-white/40 focus:outline-none appearance-none pr-8 text-white"
-                style={{
-                  colorScheme: "dark",
-                  backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='white' stroke-opacity='0.5' stroke-width='1.5' fill='none'/></svg>\")",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "right 10px center",
-                }}
-              >
-                {COUNTRY_CODES.map((c) => (
-                  <option
-                    key={`${c.flag}-${c.code}-${c.label}`}
-                    value={`${c.code}|${c.label}`}
-                    style={{ backgroundColor: "#1A1A22", color: "white" }}
-                  >
-                    {c.flag} {c.code} {c.label}
-                  </option>
-                ))}
-              </select>
+              />
               <div className="flex-1">
                 <TextInput
                   type="tel"
