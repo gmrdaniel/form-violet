@@ -91,9 +91,26 @@
     "growth": { "tag": "GROWTH", "name": "Starter + dubbing + SEO + AI Coach", "includes": "Everything in Starter plus AI dubbing/translation, content SEO and ELEVN AI Coach." },
     "pro": { "tag": "PRO · most complete", "name": "Growth + dashboard + media kit + posting + strategy", "includes": "Everything in Growth plus weekly dashboard, dynamic media kit, 'we post for you', and 30-min monthly strategy call." }
   },
-  "privacy": {
-    "title": "Privacy Notice",
-    "body": "Global Media Review / La Neta (we) operate this survey.\n\n## What we collect\n- Always: survey answers, browser user-agent.\n- If you consent (Q11): your WhatsApp number and optionally email.\n- Never: banking info, passwords, GPS location.\n\n## What we use it for\n- All answers: to design new services for creators and measure interest.\n- Phone and email (if provided): to contact you about launch updates and early access. We do not share with third parties.\n\n## How long we keep it\n- 24 months from submission, or until you request deletion.\n\n## How to delete your data\nEmail privacy@laneta.com with subject Delete my data from the email you provided. We delete everything within 30 days.\n\n## Security\nYour answers are stored in private systems accessible only to La Neta staff.\n\n---\nLast updated: April 20, 2026"
+  "legal": {
+    "title": "Terms & Privacy",
+    "back": "← Back",
+    "updated": "Last updated: April 2026",
+    "terms": {
+      "heading": "Terms of Service",
+      "p1": "Participation in this survey is voluntary. By submitting your answers you confirm that the information you provide is true to the best of your knowledge and that you are at least 18 years old.",
+      "p2": "La Neta may use aggregated and anonymized survey results to design new services, set pricing, and publish insights about the creator economy. Individual responses are not published without consent.",
+      "p3": "The early-access incentive is a best-effort offer. If we launch the services you selected, we will reach out to you first with a free or discounted access window, subject to availability."
+    },
+    "privacy": {
+      "heading": "Privacy Notice",
+      "p1": "Data we collect: your name, social handle, platforms you create on, follower range, weekly hours spent on non-content tasks, services you currently handle yourself, your interest and willingness to pay for each service, your #1 wish, your monthly budget range, and — only if you opt in on question 11 — your WhatsApp phone number and an optional backup email.",
+      "p2": "Why we collect it: to design services and pricing that match real creator needs, to contact you when we launch (only if you opted in), and to analyze trends across our respondent base.",
+      "p3": "Where it lives: responses are stored in a Supabase (Postgres) database hosted in the United States. If the primary store is unreachable, a backup copy may be written to a Google Sheet that only La Neta team members can read.",
+      "p4": "How long we keep it: survey responses are retained for up to 24 months for research. Contact details (phone / email) are retained until 6 months after launch or until you request deletion, whichever comes first.",
+      "p5": "Your rights: you can request a copy, correction, or deletion of your data at any time. We do not sell your data or share it with third parties outside of the service providers that help us store it."
+    },
+    "contactLine": "Questions or requests? Email us at ",
+    "contactEmail": "privacy@laneta.com"
   },
   "langSwitcher": { "label": "Language" }
 }

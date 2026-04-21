@@ -71,7 +71,7 @@ export function Welcome() {
 
           <p className="text-[10px] text-white/45 text-center mt-3.5">
             {t("privacyNotice")}{" "}
-            <a href={`/${locale}/privacy`} className="underline">
+            <a href={`/${locale}/legal`} className="underline">
               {t("privacyLink")}
             </a>
             .

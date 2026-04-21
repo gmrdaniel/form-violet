@@ -191,9 +191,26 @@
       "includes": "Todo lo de Growth más dashboard semanal, media kit dinámico, 'posteamos por vos' y call mensual de estrategia de 30 min."
     }
   },
-  "privacy": {
-    "title": "Aviso de Privacidad",
-    "body": "Global Media Review / La Neta (nosotros) opera esta encuesta.\n\n## Qué datos recolectamos\n- Siempre: respuestas a las preguntas, user-agent del navegador.\n- Si consentís (Q11): tu número de WhatsApp y opcionalmente email.\n- Nunca: datos bancarios, passwords, tu ubicación GPS.\n\n## Para qué los usamos\n- Todas las respuestas: diseñar nuevos servicios para creadores y medir interés.\n- Teléfono y email (si lo diste): contactarte con novedades sobre el lanzamiento y darte early access. No lo compartimos con terceros.\n\n## Cuánto tiempo los guardamos\n- 24 meses desde la fecha de envío, o hasta que pidas que los borremos.\n\n## Cómo borrar tus datos\nEscribinos a privacy@laneta.com con el asunto Borrar mis datos desde el email que diste. En 30 días borramos todo lo asociado.\n\n## Seguridad\nTus respuestas se guardan en sistemas privados, accesibles solo por el equipo de La Neta.\n\n---\nÚltima actualización: 20 de abril, 2026"
+  "legal": {
+    "title": "Términos y Privacidad",
+    "back": "← Atrás",
+    "updated": "Última actualización: abril de 2026",
+    "terms": {
+      "heading": "Términos de uso",
+      "p1": "La participación en esta encuesta es voluntaria. Al enviar tus respuestas confirmas que la información que proporcionas es verdadera y que tienes al menos 18 años.",
+      "p2": "La Neta puede usar los resultados agregados y anonimizados de la encuesta para diseñar nuevos servicios, definir precios y publicar insights sobre la economía de creadores. Las respuestas individuales no se publican sin consentimiento.",
+      "p3": "El incentivo de acceso anticipado es una oferta de buena fe. Si lanzamos los servicios que seleccionaste, te contactaremos primero con una ventana de acceso gratuito o con descuento, sujeta a disponibilidad."
+    },
+    "privacy": {
+      "heading": "Aviso de privacidad",
+      "p1": "Datos que recopilamos: tu nombre, usuario de redes sociales, plataformas en las que creas contenido, rango de seguidores, horas semanales dedicadas a tareas que no son crear contenido, servicios que actualmente manejas tú mismo, tu interés y disposición a pagar por cada servicio, tu deseo #1, tu rango de presupuesto mensual y, solo si aceptas en la pregunta 11, tu número de WhatsApp y un email opcional de respaldo.",
+      "p2": "Para qué los recopilamos: para diseñar servicios y precios que coincidan con las necesidades reales de creadores, para contactarte cuando lancemos (solo si aceptaste) y para analizar tendencias entre quienes responden.",
+      "p3": "Dónde viven: las respuestas se almacenan en una base de datos Supabase (Postgres) alojada en Estados Unidos. Si el almacén principal no está disponible, puede escribirse una copia de respaldo en una hoja de Google que solo el equipo de La Neta puede leer.",
+      "p4": "Cuánto tiempo los guardamos: las respuestas de la encuesta se conservan hasta por 24 meses con fines de investigación. Los datos de contacto (teléfono / email) se conservan hasta 6 meses después del lanzamiento o hasta que solicites su eliminación, lo que ocurra primero.",
+      "p5": "Tus derechos: puedes solicitar una copia, rectificación o eliminación de tus datos en cualquier momento. No vendemos tus datos ni los compartimos con terceros fuera de los proveedores de servicio que nos ayudan a almacenarlos."
+    },
+    "contactLine": "¿Dudas o solicitudes? Escríbenos a ",
+    "contactEmail": "privacy@laneta.com"
   },
   "langSwitcher": { "label": "Idioma" }
 }
