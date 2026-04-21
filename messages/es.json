@@ -1,0 +1,199 @@
+{
+  "welcome": {
+    "brand": "LA NETA",
+    "title": "Queremos escucharte",
+    "intro1": "La Neta es una empresa que apoya a creadores de contenido a crecer más rápido, llegar a audiencias globales y construir negocios reales con sus videos. Trabajamos con más de 50,000 creadores en América.",
+    "intro2": "Estamos diseñando nuevos servicios pensados específicamente para creadores como vos, y queremos hacerlo bien.",
+    "intro3": "Esta encuesta dura 3 minutos. Tus respuestas son confidenciales y van a dar forma directa a lo que construyamos.",
+    "gift": "🎁 Completá esta encuesta y sé de los primeros en recibir estos servicios GRATIS o con un descuento fuerte cuando lancemos.",
+    "cta": "Empecemos",
+    "timeEstimate": "3 min",
+    "privacyNotice": "Al continuar aceptás nuestro",
+    "privacyLink": "aviso de privacidad",
+    "resumeTitle": "Tenés una encuesta sin terminar",
+    "resumeContinue": "Continuar →",
+    "resumeRestart": "Empezar de cero"
+  },
+  "progress": {
+    "sectionOf": "Sección {current} de {total}",
+    "minsLeft": "~{mins} min",
+    "lastQuestion": "Última pregunta"
+  },
+  "nav": {
+    "back": "← Atrás",
+    "next": "Siguiente →",
+    "submit": "Enviar respuestas ✓",
+    "submitting": "Enviando..."
+  },
+  "save": {
+    "saved": "✓ Guardado"
+  },
+  "s1": {
+    "sectionTitle": "Sobre vos",
+    "q1": { "text": "¿Cómo te llamás?", "placeholder": "Tu nombre" },
+    "q2": { "text": "¿Cuál es tu handle en redes?", "placeholder": "@tuhandle" },
+    "q3": {
+      "text": "¿En qué plataformas creás contenido?",
+      "hint": "Seleccioná todas las que apliquen",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "twitter": "Twitter / X",
+      "other": "Otra",
+      "otherPlaceholder": "¿Cuál?"
+    },
+    "q4": {
+      "text": "¿Cuántos seguidores tenés en total en todas tus plataformas?",
+      "lt_1k": "Menos de 1,000",
+      "1k_10k": "1,000 – 10,000",
+      "10k_50k": "10,000 – 50,000",
+      "50k_100k": "50,000 – 100,000",
+      "100k_500k": "100,000 – 500,000",
+      "500k_plus": "500,000+"
+    },
+    "q5": {
+      "text": "¿Cuántas horas por semana pasás en tareas que NO son crear tu contenido principal?",
+      "hint": "Editar clips, hacer thumbnails, postear en redes, contestar DMs, SEO, emails, etc.",
+      "lt_2": "Menos de 2 horas",
+      "2_5": "2-5 horas",
+      "5_10": "5-10 horas",
+      "10_plus": "10+ horas"
+    },
+    "q6": {
+      "text": "¿Cuáles de estas cosas hacés actualmente?",
+      "hint": "Seleccioná todas las que apliquen",
+      "cut_clips": "Corto clips/shorts de mi contenido",
+      "design_thumbnails": "Diseño mis propios thumbnails o covers",
+      "optimize_seo": "Optimizo mis títulos, descripciones, tags o hashtags",
+      "translate_content": "Traduzco o dobleo mi contenido a otros idiomas",
+      "manage_schedule": "Manejo mi propio calendario de posteo multi-plataforma",
+      "newsletter": "Tengo un newsletter",
+      "paid_community": "Tengo una comunidad paga",
+      "online_course": "Vendo un curso online",
+      "podcast": "Tengo un podcast",
+      "merchandise": "Vendo merchandising",
+      "none_of_above": "Nada de lo anterior"
+    }
+  },
+  "s2": {
+    "sectionTitle": "Servicios que estamos considerando",
+    "intro": "Abajo hay 13 servicios que podríamos ofrecer. Para cada uno decinos si te interesa y cuánto pagarías.",
+    "counter": "{n} / 13",
+    "interest": {
+      "label": "¿Te interesa?",
+      "very": "🔥 Sí",
+      "somewhat": "Tal vez",
+      "none": "No"
+    },
+    "price": {
+      "label": "¿Cuánto pagarías por mes?",
+      "labelSetup": "Setup + mes",
+      "other": "Otro monto",
+      "otherPlaceholder": "$___",
+      "notInterestedBadge": "No me interesa"
+    },
+    "continueCta": "Continuar a bundles →"
+  },
+  "s3": {
+    "sectionTitle": "Bundles con descuento",
+    "intro": "En vez de comprar servicios uno por uno, podríamos ofrecer bundles con descuento. Mirá la comparación y decinos cuánto pagarías.",
+    "standaloneLabel": "Si los compraras sueltos:",
+    "savingsLabel": "Ahorrás {amount}",
+    "priceQuestion": "¿Cuánto pagarías por mes?",
+    "notInterestedBundle": "No me interesa este bundle",
+    "q8": {
+      "text": "¿Preferís comprar servicios individuales o un bundle?",
+      "bundle": "Bundle — un precio por todo, más fácil de manejar",
+      "individual": "Individual — solo quiero servicios específicos",
+      "depends": "Depende de cuánto ahorre con el bundle",
+      "not_sure": "No estoy seguro/a todavía"
+    }
+  },
+  "s4": {
+    "sectionTitle": "Últimas preguntas",
+    "q9": {
+      "text": "¿Cuánto invertirías en TOTAL por mes en hacer crecer tu contenido y marca?",
+      "hint": "Incluyendo cualquier herramienta o servicio que ya pagás o considerarías pagar.",
+      "lt_50": "Menos de $50/mes",
+      "50_100": "$50-100/mes",
+      "100_200": "$100-200/mes",
+      "200_400": "$200-400/mes",
+      "400_plus": "$400+/mes",
+      "custom": "Otro monto",
+      "customPlaceholder": "$___"
+    },
+    "q10": {
+      "text": "¿Con qué cosa te gustaría más que te ayudemos ahora mismo?",
+      "placeholder": "Contame lo que se te ocurra — 2 o 3 líneas alcanza..."
+    },
+    "q11": {
+      "text": "¿Podemos contactarte para compartirte novedades y darte acceso anticipado cuando lancemos?",
+      "yes": "Sí 🎁",
+      "no": "No",
+      "phoneLabel": "Tu número (WhatsApp)",
+      "phonePlaceholder": "+52 55 1234 5678",
+      "emailLabel": "Tu email (backup, opcional)",
+      "emailPlaceholder": "tu@email.com"
+    }
+  },
+  "thanks": {
+    "title": "¡Gracias!",
+    "body": "Tus respuestas ya están guardadas. Cada una ayuda a construir mejores herramientas para creadores como vos.",
+    "gift": "🎁 Ya estás en la lista de early access. Vas a ser de los primeros en probar gratis o con descuento cuando lancemos.",
+    "closingLine": "Te agradecemos. Seguí creando — nosotros nos ocupamos del resto.",
+    "shareTitle": "¿Conocés otro creador que debería responder?",
+    "shareWhatsapp": "📲 Compartir por WhatsApp",
+    "shareCopy": "Copiar link",
+    "shareCopied": "✓ Link copiado"
+  },
+  "errors": {
+    "required": "Este campo es obligatorio",
+    "emailInvalid": "Email inválido",
+    "phoneInvalid": "Teléfono inválido",
+    "nameShort": "Mínimo 2 caracteres",
+    "nameLong": "Máximo 100 caracteres",
+    "wishShort": "Contanos un poco más (mínimo 3 caracteres)",
+    "submitNetwork": "No pudimos guardar tu respuesta. Tu progreso está seguro.",
+    "submitServer": "Algo falló de nuestro lado. Intentalo en unos segundos.",
+    "submitRateLimit": "Muchos intentos seguidos. Probá en 1 hora.",
+    "retry": "Intentar de nuevo"
+  },
+  "services": {
+    "short_clips": { "name": "Short-form clips", "description": "Convertimos tu contenido en clips listos para postear en TikTok, Reels y Shorts. Con captions, formato y branding incluidos. Vos solo posteás." },
+    "thumbnail_design": { "name": "Thumbnail + cover design", "description": "Thumbnails o covers profesionales con 2-3 variantes para testear cuál recibe más clics. Más títulos optimizados con datos de búsqueda de tu nicho." },
+    "ai_dubbing": { "name": "AI dubbing / traducción", "description": "Dobleamos tus videos a otros idiomas con IA que suena igual que vos. O traducimos tus captions y overlays para posts multilingües." },
+    "content_seo": { "name": "Content SEO + hashtags", "description": "Optimizamos cada post y video para ser encontrado: keywords, hashtags, descripciones, tags. Y arreglamos tu contenido viejo que está invisible en búsquedas." },
+    "performance_dashboard": { "name": "Dashboard semanal de performance", "description": "Reporte visual semanal mostrando qué está funcionando, qué no, y 3-5 cosas específicas para hacer la próxima semana para crecer más rápido." },
+    "media_kit": { "name": "Media kit dinámico", "description": "Un media kit siempre actualizado con tus stats reales. Le mandás un link a las marcas. Siempre al día, sin PDFs viejos. Se actualiza solo." },
+    "ai_coach": { "name": "ELEVN AI Coach", "description": "Un asistente IA entrenado con TU data. Preguntale lo que quieras: ideas de contenido, por qué algo rindió mal, mejores horarios de posteo. Respuestas personalizadas 24/7." },
+    "we_post_for_you": { "name": "Posteamos por vos", "description": "No solo creamos tu contenido. Lo posteamos en todas tus redes en los mejores horarios con los hashtags correctos. Tus redes corren en autopilot." },
+    "paid_community": { "name": "Comunidad paga (manejada por nosotros)", "description": "Construimos y manejamos una comunidad paga para tus fans más grandes: posts diarios, onboarding de miembros, moderación y crecimiento. Vos aparecés 30 min/semana para una sesión en vivo." },
+    "newsletter": { "name": "Newsletter (escrito y enviado por nosotros)", "description": "Escribimos y enviamos un newsletter semanal por email a partir de tu contenido. Vos nos das bullets o una nota de voz. Nosotros lo hacemos profesional y lo mandamos a tu lista." },
+    "online_course": { "name": "Curso online (armado por nosotros)", "description": "Armamos un curso completo con tu expertise: currículo, sales page, checkout, emails de lanzamiento. Vos grabás los videos. El curso se vende solo." },
+    "podcast": { "name": "Podcast (a partir de tu contenido existente)", "description": "Convertimos tus videos en un podcast profesional. No grabás nada extra. Nosotros limpiamos el audio, hacemos show notes y distribuimos en Spotify y Apple." },
+    "merch_store": { "name": "Tienda de merch (diseñada y manejada)", "description": "Diseñamos merchandise con tu marca y construimos tu tienda online. Un partner maneja manufactura, impresión y envío. Cero inventario para vos. Solo promocionás." }
+  },
+  "bundles": {
+    "starter": {
+      "tag": "STARTER",
+      "name": "Clips + thumbnails + reporte mensual",
+      "includes": "Short-form clips, diseño de thumbnails/covers, reporte mensual de performance."
+    },
+    "growth": {
+      "tag": "GROWTH",
+      "name": "Starter + dubbing + SEO + AI Coach",
+      "includes": "Todo lo de Starter más AI dubbing/traducción, content SEO y ELEVN AI Coach."
+    },
+    "pro": {
+      "tag": "PRO · más completo",
+      "name": "Growth + dashboard + media kit + posteo + estrategia",
+      "includes": "Todo lo de Growth más dashboard semanal, media kit dinámico, 'posteamos por vos' y call mensual de estrategia de 30 min."
+    }
+  },
+  "privacy": {
+    "title": "Aviso de Privacidad",
+    "body": "Global Media Review / La Neta (nosotros) opera esta encuesta.\n\n## Qué datos recolectamos\n- Siempre: respuestas a las preguntas, user-agent del navegador.\n- Si consentís (Q11): tu número de WhatsApp y opcionalmente email.\n- Nunca: datos bancarios, passwords, tu ubicación GPS.\n\n## Para qué los usamos\n- Todas las respuestas: diseñar nuevos servicios para creadores y medir interés.\n- Teléfono y email (si lo diste): contactarte con novedades sobre el lanzamiento y darte early access. No lo compartimos con terceros.\n\n## Cuánto tiempo los guardamos\n- 24 meses desde la fecha de envío, o hasta que pidas que los borremos.\n\n## Cómo borrar tus datos\nEscribinos a privacy@laneta.com con el asunto Borrar mis datos desde el email que diste. En 30 días borramos todo lo asociado.\n\n## Seguridad\nTus respuestas se guardan en sistemas privados, accesibles solo por el equipo de La Neta.\n\n---\nÚltima actualización: 20 de abril, 2026"
+  },
+  "langSwitcher": { "label": "Idioma" }
+}

@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div className="p-8 text-white">La Neta — coming soon</div>;
+import { redirect } from "next/navigation";
+
+export default function RootPage() {
+  redirect("/es");
 }

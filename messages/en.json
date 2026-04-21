@@ -1,0 +1,99 @@
+{
+  "welcome": {
+    "brand": "LA NETA",
+    "title": "We want to hear from you",
+    "intro1": "La Neta is a creator-first company that partners with platforms like YouTube, TikTok, Instagram and Pinterest to help content creators grow faster, reach global audiences, and build real businesses. We work with over 50,000 creators across the Americas.",
+    "intro2": "We're building new services designed specifically for creators like you, and we want to get it right.",
+    "intro3": "This quick survey takes about 3 minutes. Your answers are confidential and will directly shape what we build.",
+    "gift": "🎁 Complete this survey and you'll be among the first to receive these services FREE or at a heavy discount when we launch.",
+    "cta": "Let's go",
+    "timeEstimate": "3 min",
+    "privacyNotice": "By continuing you accept our",
+    "privacyLink": "privacy notice",
+    "resumeTitle": "You have an unfinished survey",
+    "resumeContinue": "Continue →",
+    "resumeRestart": "Start over"
+  },
+  "progress": { "sectionOf": "Section {current} of {total}", "minsLeft": "~{mins} min", "lastQuestion": "Last question" },
+  "nav": { "back": "← Back", "next": "Next →", "submit": "Submit ✓", "submitting": "Sending..." },
+  "save": { "saved": "✓ Saved" },
+  "s1": {
+    "sectionTitle": "About you",
+    "q1": { "text": "What's your name?", "placeholder": "Your name" },
+    "q2": { "text": "What's your social handle?", "placeholder": "@yourhandle" },
+    "q3": { "text": "What platforms do you create on?", "hint": "Select all that apply", "youtube": "YouTube", "tiktok": "TikTok", "instagram": "Instagram", "facebook": "Facebook", "twitter": "Twitter / X", "other": "Other", "otherPlaceholder": "Which?" },
+    "q4": { "text": "Total followers across all platforms?", "lt_1k": "Under 1,000", "1k_10k": "1,000 – 10,000", "10k_50k": "10,000 – 50,000", "50k_100k": "50,000 – 100,000", "100k_500k": "100,000 – 500,000", "500k_plus": "500,000+" },
+    "q5": { "text": "Hours per week on tasks OTHER than main content creation?", "hint": "Editing, thumbnails, social posts, DMs, SEO, emails, etc.", "lt_2": "Less than 2 hours", "2_5": "2-5 hours", "5_10": "5-10 hours", "10_plus": "10+ hours" },
+    "q6": { "text": "Which of these do you currently do yourself?", "hint": "Select all that apply", "cut_clips": "I cut clips/shorts from my content", "design_thumbnails": "I design my own thumbnails or covers", "optimize_seo": "I optimize titles, descriptions, tags or hashtags", "translate_content": "I translate or dub my content", "manage_schedule": "I manage my posting schedule across platforms", "newsletter": "I have a newsletter", "paid_community": "I run a paid community", "online_course": "I sell an online course", "podcast": "I have a podcast", "merchandise": "I sell merchandise", "none_of_above": "None of the above" }
+  },
+  "s2": {
+    "sectionTitle": "Services we're considering",
+    "intro": "Below are 13 services we may offer. For each, tell us if you're interested and how much you'd pay.",
+    "counter": "{n} / 13",
+    "interest": { "label": "Interested?", "very": "🔥 Yes", "somewhat": "Maybe", "none": "No" },
+    "price": { "label": "How much per month?", "labelSetup": "Setup + month", "other": "Other", "otherPlaceholder": "$___", "notInterestedBadge": "Not interested" },
+    "continueCta": "Continue to bundles →"
+  },
+  "s3": {
+    "sectionTitle": "Bundles with discount",
+    "intro": "Rather than buying services one by one, we may offer bundles at a discount. See the comparison then tell us what you'd pay.",
+    "standaloneLabel": "If bought separately:",
+    "savingsLabel": "Save {amount}",
+    "priceQuestion": "How much per month?",
+    "notInterestedBundle": "Not interested in this bundle",
+    "q8": { "text": "Would you prefer services individually or as a bundle?", "bundle": "Bundle — one price, easier to manage", "individual": "Individual — I only want specific services", "depends": "Depends on how much the bundle saves", "not_sure": "Not sure yet" }
+  },
+  "s4": {
+    "sectionTitle": "Final questions",
+    "q9": { "text": "What's the TOTAL monthly amount you'd invest in growing your content and brand?", "hint": "Including any tools, services, or help you already pay for or would consider.", "lt_50": "Under $50/mo", "50_100": "$50-100/mo", "100_200": "$100-200/mo", "200_400": "$200-400/mo", "400_plus": "$400+/mo", "custom": "Other amount", "customPlaceholder": "$___" },
+    "q10": { "text": "What's the #1 thing you wish you had help with right now?", "placeholder": "Whatever comes to mind — 2 or 3 lines is enough..." },
+    "q11": { "text": "Can we contact you for updates and early access at launch?", "yes": "Yes 🎁", "no": "No", "phoneLabel": "Your number (WhatsApp)", "phonePlaceholder": "+1 555 1234 5678", "emailLabel": "Your email (backup, optional)", "emailPlaceholder": "you@email.com" }
+  },
+  "thanks": {
+    "title": "Thanks!",
+    "body": "Your answers are saved. Every response helps us build better tools for creators like you.",
+    "gift": "🎁 You're now on the early access list. You'll be among the first to try these services free or at a discount when we launch.",
+    "closingLine": "We appreciate you. Keep creating — we'll handle the rest.",
+    "shareTitle": "Know another creator who should take this?",
+    "shareWhatsapp": "📲 Share via WhatsApp",
+    "shareCopy": "Copy link",
+    "shareCopied": "✓ Link copied"
+  },
+  "errors": {
+    "required": "This field is required",
+    "emailInvalid": "Invalid email",
+    "phoneInvalid": "Invalid phone",
+    "nameShort": "Minimum 2 characters",
+    "nameLong": "Maximum 100 characters",
+    "wishShort": "Tell us a bit more (minimum 3 characters)",
+    "submitNetwork": "We couldn't save your response. Your progress is safe.",
+    "submitServer": "Something failed on our side. Try again in a few seconds.",
+    "submitRateLimit": "Too many attempts. Try again in 1 hour.",
+    "retry": "Try again"
+  },
+  "services": {
+    "short_clips": { "name": "Short-form clips", "description": "We turn your content into ready-to-post clips for TikTok, Reels, and Shorts. Captions, formatting, and branding included. You just post." },
+    "thumbnail_design": { "name": "Thumbnail + cover design", "description": "Professional thumbnails or cover images with 2-3 variants to test which gets the most clicks. Plus optimized titles using search data for your niche." },
+    "ai_dubbing": { "name": "AI dubbing / translation", "description": "We dub your videos into other languages using AI that sounds exactly like you. Or translate your captions and text overlays for multilingual posts." },
+    "content_seo": { "name": "Content SEO + hashtags", "description": "We optimize every post and video for discovery: keywords, hashtags, descriptions, tags. Plus we fix your old content that's invisible in search." },
+    "performance_dashboard": { "name": "Weekly performance dashboard", "description": "A visual weekly report showing what's working, what's not, and 3-5 specific things to do next week to grow faster." },
+    "media_kit": { "name": "Dynamic media kit", "description": "An always-updated media kit with your real stats. Send brands one link. Always current, no outdated PDFs. Updates itself automatically." },
+    "ai_coach": { "name": "ELEVN AI Coach", "description": "An AI assistant trained on YOUR data. Ask it anything: next content ideas, why something underperformed, best posting times. Personalized answers 24/7." },
+    "we_post_for_you": { "name": "We post for you", "description": "We don't just create your content. We post it on all your social media accounts at the best times with the right hashtags. Your social runs on complete autopilot." },
+    "paid_community": { "name": "Paid community (managed for you)", "description": "We build and run a paid community for your biggest fans: daily posts, member onboarding, moderation, and growth. You show up 30 min/week for a live session." },
+    "newsletter": { "name": "Newsletter (written + sent for you)", "description": "We write and send a weekly email newsletter from your content. You give us bullet points or a voice memo. We make it professional and send it to your list." },
+    "online_course": { "name": "Online course (built for you)", "description": "We build a complete course from your expertise: curriculum, sales page, checkout, launch emails. You record the video lessons. The course sells on autopilot." },
+    "podcast": { "name": "Podcast (from your existing content)", "description": "We turn your existing videos into a professional podcast. You record nothing extra. We handle audio cleanup, show notes, and distribution to Spotify and Apple." },
+    "merch_store": { "name": "Merch store (designed + managed)", "description": "We design branded merchandise and build your online store. A partner handles manufacturing, printing, and shipping. Zero inventory for you. You just promote." }
+  },
+  "bundles": {
+    "starter": { "tag": "STARTER", "name": "Clips + thumbnails + monthly report", "includes": "Short-form clips, thumbnail/cover design, monthly performance report." },
+    "growth": { "tag": "GROWTH", "name": "Starter + dubbing + SEO + AI Coach", "includes": "Everything in Starter plus AI dubbing/translation, content SEO and ELEVN AI Coach." },
+    "pro": { "tag": "PRO · most complete", "name": "Growth + dashboard + media kit + posting + strategy", "includes": "Everything in Growth plus weekly dashboard, dynamic media kit, 'we post for you', and 30-min monthly strategy call." }
+  },
+  "privacy": {
+    "title": "Privacy Notice",
+    "body": "Global Media Review / La Neta (we) operate this survey.\n\n## What we collect\n- Always: survey answers, browser user-agent.\n- If you consent (Q11): your WhatsApp number and optionally email.\n- Never: banking info, passwords, GPS location.\n\n## What we use it for\n- All answers: to design new services for creators and measure interest.\n- Phone and email (if provided): to contact you about launch updates and early access. We do not share with third parties.\n\n## How long we keep it\n- 24 months from submission, or until you request deletion.\n\n## How to delete your data\nEmail privacy@laneta.com with subject Delete my data from the email you provided. We delete everything within 30 days.\n\n## Security\nYour answers are stored in private systems accessible only to La Neta staff.\n\n---\nLast updated: April 20, 2026"
+  },
+  "langSwitcher": { "label": "Language" }
+}
