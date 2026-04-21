@@ -1,6 +1,5 @@
-import { useTranslations } from "next-intl";
+import { Welcome } from "@/components/screens/Welcome";
 
 export default function WelcomePage() {
-  const t = useTranslations("welcome");
-  return <div className="p-8">{t("title")}</div>;
+  return <Welcome />;
 }
