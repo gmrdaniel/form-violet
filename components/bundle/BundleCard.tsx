@@ -31,8 +31,8 @@ export function BundleCard({ bundle }: { bundle: BundleConfig }) {
       <div className="text-[15px] font-bold mb-1.5">{t(bundle.nameKey)}</div>
       <div className="text-[12px] text-white/70 leading-snug mb-2.5">{t(bundle.includesKey)}</div>
       <div className="flex justify-between text-[11px] mt-2 pt-2 border-t border-white/8">
-        <span className="text-white/45 line-through">{bundle.standalonePriceRange}</span>
-        <span className="text-success font-semibold">{t("s3.savingsLabel", { amount: bundle.savingsLabel })}</span>
+        <span className="text-white/45 line-through">{t(`bundles.${bundle.id}.value`)}</span>
+        <span className="text-success font-semibold">{t(`bundles.${bundle.id}.savings`)}</span>
       </div>
 
       <div className="text-[13px] font-medium mt-3.5 mb-2">{t("s3.priceQuestion")}</div>

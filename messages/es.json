@@ -78,7 +78,7 @@
   },
   "s2": {
     "sectionTitle": "Servicios que estamos considerando",
-    "intro": "Abajo hay 13 servicios que podríamos ofrecer. Para cada uno decinos si te interesa y cuánto pagarías.",
+    "intro": "Abajo hay 13 servicios que podríamos ofrecer. Para cada uno decinos si te interesa y cuánto pagarías (USD).",
     "counter": "{n} / 13",
     "interest": {
       "label": "¿Te interesa?",
@@ -96,12 +96,12 @@
     "continueCta": "Continuar a bundles →"
   },
   "s3": {
-    "sectionTitle": "Bundles con descuento",
-    "intro": "En vez de comprar servicios uno por uno, podríamos ofrecer bundles con descuento. Mirá la comparación y decinos cuánto pagarías.",
+    "sectionTitle": "Paquetes",
+    "intro": "A veces sale más barato así 👀",
     "standaloneLabel": "Si los compraras sueltos:",
-    "savingsLabel": "Ahorrás {amount}",
-    "priceQuestion": "¿Cuánto pagarías por mes?",
+    "priceQuestion": "¿Cuánto pagarías por mes? (USD)",
     "notInterestedBundle": "No me interesa este bundle",
+    "popular": "POPULAR",
     "q8": {
       "text": "¿Preferís comprar servicios individuales o un bundle?",
       "bundle": "Bundle — un precio por todo, más fácil de manejar",
@@ -178,17 +178,26 @@
     "starter": {
       "tag": "STARTER",
       "name": "Clips + thumbnails + reporte mensual",
-      "includes": "Short-form clips, diseño de thumbnails/covers, reporte mensual de performance."
+      "includes": "Short-form clips, diseño de thumbnails/covers, reporte mensual de performance.",
+      "tagItems": "Clips + miniaturas + reporte mensual",
+      "value": "$100–200/mes",
+      "savings": "Ahorra 25–40%"
     },
     "growth": {
       "tag": "GROWTH",
       "name": "Starter + dubbing + SEO + AI Coach",
-      "includes": "Todo lo de Starter más AI dubbing/traducción, content SEO y ELEVN AI Coach."
+      "includes": "Todo lo de Starter más AI dubbing/traducción, content SEO y ELEVN AI Coach.",
+      "tagItems": "+ doblaje + SEO + AI Coach",
+      "value": "$250–450/mes",
+      "savings": "Ahorra 30–45%"
     },
     "pro": {
       "tag": "PRO · más completo",
       "name": "Growth + dashboard + media kit + posteo + estrategia",
-      "includes": "Todo lo de Growth más dashboard semanal, media kit dinámico, 'posteamos por vos' y call mensual de estrategia de 30 min."
+      "includes": "Todo lo de Growth más dashboard semanal, media kit dinámico, 'posteamos por vos' y call mensual de estrategia de 30 min.",
+      "tagItems": "+ dashboard + media kit + autopublicación + llamada estratégica",
+      "value": "$400–700/mes",
+      "savings": "Ahorra 35–50%"
     }
   },
   "legal": {

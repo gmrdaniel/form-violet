@@ -28,19 +28,19 @@
   },
   "s2": {
     "sectionTitle": "Services we're considering",
-    "intro": "Below are 13 services we may offer. For each, tell us if you're interested and how much you'd pay.",
+    "intro": "Below are 13 services we may offer. For each, tell us if you're interested and how much you'd pay (USD).",
     "counter": "{n} / 13",
     "interest": { "label": "Interested?", "very": "🔥 Yes", "somewhat": "Maybe", "none": "No" },
     "price": { "label": "How much per month?", "labelSetup": "Setup + month", "other": "Other", "otherPlaceholder": "$___", "notInterestedBadge": "Not interested" },
     "continueCta": "Continue to bundles →"
   },
   "s3": {
-    "sectionTitle": "Bundles with discount",
-    "intro": "Rather than buying services one by one, we may offer bundles at a discount. See the comparison then tell us what you'd pay.",
+    "sectionTitle": "Bundles",
+    "intro": "Sometimes it's cheaper this way 👀",
     "standaloneLabel": "If bought separately:",
-    "savingsLabel": "Save {amount}",
-    "priceQuestion": "How much per month?",
+    "priceQuestion": "How much per month? (USD)",
     "notInterestedBundle": "Not interested in this bundle",
+    "popular": "POPULAR",
     "q8": { "text": "Would you prefer services individually or as a bundle?", "bundle": "Bundle — one price, easier to manage", "individual": "Individual — I only want specific services", "depends": "Depends on how much the bundle saves", "not_sure": "Not sure yet" }
   },
   "s4": {
@@ -87,9 +87,9 @@
     "merch_store": { "name": "Merch store (designed + managed)", "description": "We design branded merchandise and build your online store. A partner handles manufacturing, printing, and shipping. Zero inventory for you. You just promote." }
   },
   "bundles": {
-    "starter": { "tag": "STARTER", "name": "Clips + thumbnails + monthly report", "includes": "Short-form clips, thumbnail/cover design, monthly performance report." },
-    "growth": { "tag": "GROWTH", "name": "Starter + dubbing + SEO + AI Coach", "includes": "Everything in Starter plus AI dubbing/translation, content SEO and ELEVN AI Coach." },
-    "pro": { "tag": "PRO · most complete", "name": "Growth + dashboard + media kit + posting + strategy", "includes": "Everything in Growth plus weekly dashboard, dynamic media kit, 'we post for you', and 30-min monthly strategy call." }
+    "starter": { "tag": "STARTER", "name": "Clips + thumbnails + monthly report", "includes": "Short-form clips, thumbnail/cover design, monthly performance report.", "tagItems": "Clips + thumbs + monthly report", "value": "$100–200/mo", "savings": "Save 25–40%" },
+    "growth": { "tag": "GROWTH", "name": "Starter + dubbing + SEO + AI Coach", "includes": "Everything in Starter plus AI dubbing/translation, content SEO and ELEVN AI Coach.", "tagItems": "+ dubbing + SEO + AI Coach", "value": "$250–450/mo", "savings": "Save 30–45%" },
+    "pro": { "tag": "PRO · most complete", "name": "Growth + dashboard + media kit + posting + strategy", "includes": "Everything in Growth plus weekly dashboard, dynamic media kit, 'we post for you', and 30-min monthly strategy call.", "tagItems": "+ dashboard + media kit + autopost + strategy call", "value": "$400–700/mo", "savings": "Save 35–50%" }
   },
   "legal": {
     "title": "Terms & Privacy",
